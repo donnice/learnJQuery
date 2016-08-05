@@ -19,7 +19,7 @@
 		
 		.divContent {
 			padding:5px;
-			display:none;
+			font-size:9pt;
 		}
 		
 		.divTip {
@@ -45,19 +45,55 @@
 		}
 	</style>
 	
-	<script>
+	<!-- <script>
 		function btnClick() {
 			var oTxtValue = document.getElementById("Text1").value;
+
+			var oRdoValue = document.getElementById("Radio1").checked?"Male":"Female";
+
+			var oChkValue = Checkbox1.checked?"Married":"Single";
+
+			document.getElementById("divTip").style.display = "block";
+
+			document.getElementById("divTip").innerHTML = oTxtValue+"<br>"
+			+oRdoValue+"<br>"+oChkValue;
 		}
+	</script> -->
+	<script>
+		$(function(){
+			$("#btnSubmit").click(function(){
+				var oTxtValue = $("#Text1").val();
 
-		var oRdoValue(Radio1.checked)?"Male":"Female";
+				var oRdoValue = $("#Radio1").is(":checked")?"Male":"Female";
 
-		var oChkValue = (Checkbox1.checked)?"Married":"Single";
+				var oChkValue = $("#Checkbox1").is(":checked")?"Married":"Single";
 
-		document.getElementById("divTip").style.display = "block";
+				$("#divTip").css("display","block").html(
+						oTxtValue+"<br>"
+						+oRdoValue+"<br>"+oChkValue);
+			})
+		})
 	</script>
 </head>
 <body>
-
+	<div class="divFrame">
+		<div class="divTitle">Please fill in this form:</div>
+		<div class="divContent">
+			Name:<input id = "Text1" type="text" class="txtCss"/><br/>
+			Gender:<input id="Radio1" name = "rdoGender" type="radio"
+						  value="Male"/> Male <br/>
+					<input id="Radio1" name = "rdoGender" type="radio"
+						  value="Male"/> Female <br/>
+			Marriage:<input id="Checkbox1" type="checkbox"/>
+			<div class="divBtn">
+				<!-- <input id="Button1" type="button"
+				value = "submit" class="btnClass"
+				onclick="btnClick();"/> -->
+				<input id = "btnSubmit" type="button"
+				value="submit" class="btnClass"/>
+			</div>
+		</div>
+	</div>
+	<div id = "divTip" class="divTip"></div>
 </body>
 </html>
