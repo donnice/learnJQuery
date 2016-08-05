@@ -1,10 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+	<!-- page 24  -->
+	<meta charset="UTF-8">
+	<title>Chain Rule</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<style type = "text/css">
+		.divFrame {
+			width:260px;
+			border:solid 1px #666;
+			font-size:10pt		
+		}
+		
+		.divTitle {
+			background-color:#eee;
+			padding:5px
+		}
+		
+		.divContent {
+			padding:5px;
+			display:none;
+		}
+		
+		divCurrColor {
+			background-color: Red
+		}
+	</style>
+	<script>
+		$(function(){
+			$(".divTitle").click(function(){
+				$(this).addClass("divCurrColor")
+				.next(".divContent").css("display","block");
+			});
+		});
+	</script>
 </head>
 <body>
-
+	<div class="divFrame">
+		<div class="divTitle">Theme</div>
+		<div class="divContent">
+			<a href="#">Link 1</a><br />
+			<a href="#">Link 2</a><br />
+			<a href="#">Link 3</a>
+		</div>
+	</div>
 </body>
 </html>
