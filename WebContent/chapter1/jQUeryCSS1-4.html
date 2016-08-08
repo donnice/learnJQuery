@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page 28  -->
+	<meta charset="UTF-8">
+	<title>JQuery CSS</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<style>
+		.divDefault {
+			width:260px;
+			font-size:10pt;
+			padding:5px;
+		}
+		
+		.divClick {
+			width:260px;
+			border:solid 1px #666;
+			font-size:10pt;
+			background-color:#eee;
+			padding:5px
+		}
+	</style>
+	<script>
+		$(document).ready(function(){
+			$(".divDefault").click(function(){
+				$(this).toggleClass("divClick").html("After Clicked");
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="divDefault">Before Clicked</div>
+</body>
+</html>

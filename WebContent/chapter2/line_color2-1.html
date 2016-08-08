@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page 32  -->
+	<meta charset="UTF-8">
+	<title>JQuery Selector:Color change</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<style type="text/css">
+		body {
+			font-size:12px;
+			text-align:center
+		}
+		
+		#tbStu {
+			width:260px;
+			border:solid 1px #666;
+			background-color:#eee
+		}
+		
+		#tbStu tr {
+			line-height:23px;
+		}
+		
+		#tbStu tr th {
+			background-color:#ccc;
+			color:#fff;
+		}
+		
+		#tbStu .trOdd {
+			background-color:#fff;
+		}
+	</style>
+	
+	<script type="text/javascript">
+		window.onload = function() {
+			var oTb = document.getElementById("tbStu");
+			for(var i = 0; i < oTb.rows.length-1;i++) {
+				if(i%2){
+					oTb.rows[i].className = "trOdd";
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<table id = "tbStu" cellpadding="0" cellspacing="0">
+		<tbody>
+			<tr>
+				<th>Number</th>
+				<th>Name</th>
+				<th>Gender</th>
+				<th>Total Score</th>
+			</tr>
+			
+			<tr>
+				<td>1001</td>
+				<td>Shujie CHEN</td>
+				<td>Male</td>
+				<td>325</td>
+			</tr>
+			
+			<tr>
+				<td>1002</td>
+				<td>Yunye Xu</td>
+				<td>Female</td>
+				<td>330</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
