@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page 38  -->
+	<meta charset="UTF-8">
+	<title>JQuery Ancestor Selector</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<style type="text/css">
+		body {
+			font-size:12px;
+			text-align:center
+		}
+		
+		div,span {
+			float:left;
+			border:solid 1px #ccc;
+			margin:8px;
+			display:none
+		}
+		
+		.clsFraA {
+			width:65px;
+			height:65px;
+		}
+		
+		.clsFraP {
+			width:45px;
+			height:45px;
+			background-color:#eee
+		}
+		
+		.clsFraC {
+			width:25px;
+			height:25px;
+			background-color:#ddd
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$("#divMid").css("display","block");
+			$("div span").css("display","block");
+		})
+		
+		$(function(){	// child elem
+			$("#divMid").css("display","block");
+			$("div>span").css("display","block");
+		})
+		
+		$(function(){	// match afterElem
+			$("#divMid+div").css("display","block");
+			$("#divMid").nextAll().css("display","block");
+		})
+		
+		$(function(){	// match all afterElem
+			$("#divMid ~ div").css("display","block");
+			$("#divMid").nextAll().css("display","block");
+		})
+		
+		$(function(){
+			$("#divMid").siblings("div")
+			.css("display","block");
+		})
+	</script>
+</head>
+<body>
+	<div class="clsFraA">Left</div>
+	<div class="clsFraA" id="divMid">
+		<span class="clsFraP" id="Span1">
+			<span class="clasFraC" id="Span2"></span>
+		</span>
+	</div>
+	<div class="clsFraA">Right_1</div>
+	<div class="clsFraA">Right_2</div>
+</body>
+</html>
