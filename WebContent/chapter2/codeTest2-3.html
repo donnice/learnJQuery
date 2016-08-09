@@ -12,14 +12,19 @@
 		}
 	</style>
 	<script>
-		window.onload = function() {
+		/* window.onload = function() {
 			if(document.getElementById("divT")) {
 				var oDiv = document.getElementById("divT");
+				oDiv.innerHTML="This is a testing page";
 			}
-		}
+		} */
+		/* 2-4 */
+		$(function(){
+			$("#divT").html("This is a testing page!");
+		})
 	</script>	
 </head>
 <body>
-	
+	<div id="divT"></div>
 </body>
 </html>
