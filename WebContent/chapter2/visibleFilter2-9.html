@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page 45  -->
+	<meta charset="UTF-8">
+	<title>JQuery Content Filter</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<style>
+		body {
+			font-size:12px;
+			text-align:center
+		}
+		
+		div {
+			float:left;
+			border:solid 1px #ccc;
+			margin:8px;
+			width:65px;
+			height:65px;
+			display:none;
+		}
+	</style>
+	<script>
+		$(function(){	// set different id and title
+			$("div[id]").show(3000);
+			// show everything include id
+		})
+		
+		$(function(){	// show everything with title 'A'
+			$("div[title='A']").show(3000);
+		})
+		
+		$(function(){	// show everything without title 'A'
+			$("div[title!='A']").show(3000);
+		})
+		
+		$(function(){	// show all title contains "B"
+			$("div[title*='B']").show(3000);
+		})
+		
+		$(function(){	//  show all title contains "B"
+			// and id = "divAB"
+			$("div[id='divAB'][title*='B']").show(3000);
+		})
+		
+	</script>
+</head>
+<body>
+	<div id="divID">ID</div>
+	<div title="A">Title A</div>
+	<div id="divAB" title="AB">ID <br />Title AB</div>
+	<div title="ABC">Title ABC</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page 45  -->
+	<meta charset="UTF-8">
+	<title>JQuery Content Filter</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<style>
+		body {
+			font-size:12px;
+			text-align:center
+		}
+		
+		div {
+			float:left;
+			border:solid 1px #ccc;
+			margin:8px;
+			width:65px;
+			height:65px;
+			display:none;		
+		}
+		
+		span {
+			float:left;
+			border:solid 1px #ccc;
+			margin:8px;
+			width:45px;
+			height:45px;
+			background-color:#eee
+		}
+	</style>
+	<script>
+		$(function(){
+			$("div:contains('A')").css("display","block");
+		})
+		$(function(){
+			$("div:empty").css("display","block");
+		})
+		$(function(){
+			$("div:has(span)").css("display","block");
+		})
+		$(function(){
+			$("div:parent").css("display","block");
+		})
+	</script>
+</head>
+<body>
+	<div>ABCD</div>
+	<div><span></span></div>
+	<div>EFaH</div>
+	<div></div>
+</body>
+</html>
