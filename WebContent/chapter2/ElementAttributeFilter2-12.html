@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- page 48  -->
+	<!-- page 51  -->
 	<meta charset="UTF-8">
 	<title>JQuery Object Attribute Filter</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -10,9 +10,73 @@
 			font-size:12px;
 			text-align:center
 		}
+		
+		div {
+			display:none
+		}
+		
+		select {
+			height:65px
+		}
+		
+		.clsIpt {
+			width:100px;
+			padding:3px
+		}
+		
+		.GetFocus {
+			border:solid 1px #666;
+			background-color: #eee
+		}
 	</style>
+	<script type="text/javascript">
+		$(function(){
+			$("#divA").show(3000);
+			$("#form1 input:enabled").addClass("GetFocus");
+		})
+		
+		$(function(){
+			$("#divA").show(3000);
+			$("#form1 input:disabled").addClass("GetFocus");
+		})
+		
+		$(function(){
+			$("#divB").show(3000);
+			$("#form1 input:checked").addClass("GetFocus");
+		})
+		
+		$(function(){
+			$("#divC").show(3000);
+			$("#Span2").html(" Clicked is:"+
+					$("select option:selected").text());
+		})
+	</script>
 </head>
 <body>
-
+	<form id = "form1" style="width:241px">
+		<div id = "divA">
+			<input type = "text" value = "Usable txt frame"
+				   class="clsIpt" />
+			<input type = "text" disabled="disabled" 
+				   value = "Usable txt frame" class="clsIpt" />
+		</div>
+		
+		<div id = "divB">
+			<input type = "checkbox" checked="checked"
+				   value="1" />Checked
+			<input type = "checkbox" value="0" />UnChecked
+		</div>
+		
+		<div id = "divC">
+			<select multiple="multiple">
+				<option value="0">Item 0</option>
+				<option value="1" selected="selected">Item 1</option>
+				<option value="2">Item 2</option>
+				<option value="3" selected="selected">Item 3
+				</option>
+			</select>
+			<span id="Span2"></span>
+		</div>
+	</form>
 </body>
 </html>
