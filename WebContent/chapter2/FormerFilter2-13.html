@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page 51  -->
+	<meta charset="UTF-8">
+	<title>JQuery Form Filter</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style type="text/css">
+		body {
+			font-size:12px;
+			text-align:center
+		}
+		
+		form {
+			width: 241px
+		}
+		
+		textarea,select,button, input,span {
+			display:none
+		}
+		
+		.btn {
+			border:#666 1px solid;
+			padding:2px;
+			width:60px;
+			filter:progid:DXImageTransform.Microsoft.
+			Gradient (GradientType=0, StartColorStr = #ffffff,
+			EndColorStr = #ECE9D8);
+		}
+		
+		.txt {
+			border:#666 1px solid;
+			padding:3px
+		}
+		
+		.img {
+			padding:2px;
+			border:solid 1px #ccc
+		}
+		
+		.div {
+			border:solid 1px #ccc;
+			background-color:#eee;
+			padding:5px
+		}
+	</style>
+	
+	<script type="text/javascript">
+		$(function(){
+			$("#form1 div").html("Form find input type:"+
+			$("#form1:input").length);
+			$("#form1 div").addClass("div");
+		})
+		
+		$(function(){
+			$("#form1:input:text").show(3000);
+		})
+		
+		$(function(){
+			$("#form1:input:password").show(3000);
+		})
+		
+		$(function(){
+			$("#form1:input:radio").show(3000);
+			$("#form1 #Span1").show(3000);
+		})
+		
+		$(function(){
+			$("#form1:input:checkbox").show(3000);
+			$("#form1 #Span2").show(3000);
+		})
+		
+		$(function(){
+			$("#form1:input:submit").show(3000);
+		})
+		
+		$(function(){
+			$("#form1:input:image").show(3000);
+		})
+		
+		$(function(){
+			$("#form1:input:reset").show(3000);
+		})
+		
+		$(function(){
+			$("#form1:input:button").show(3000);
+		})
+		
+		$(function(){
+			$("#form1:file").show(3000);
+		})
+	</script>
+</head>
+<body>
+	<form id="form1">
+		<textarea class="txt">TextArea</textarea>
+		<select><option value="0">Item 0</option></select>
+		<input type = "text" value = "Text" class="txt"/>
+		<input type = "password" value="PassWord" class="txt" />
+		<input type = "radio" /><span id = "Span1">Radio</span>
+		<input type = "checkbox" />
+		<span id = "Span2">CheckBox</span>
+		<input type = "submit" Value = "Submit" class="btn" />Submit
+		<input type = "image" title="Image" class="img"/>
+		<input class="btn" type = "reset" value="Reset" />
+		<input type = "button" value="Button" class="btn" />
+		<input type = "file" title="File" class="txt" />
+		<div id="divShow"></div>
+	</form>
+</body>
+</html>
