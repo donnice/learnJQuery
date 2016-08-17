@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page 56  -->
+	<meta charset="UTF-8">
+	<title>JQuery Htm Nav</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style type="text/css">
+		body {
+			font-size:13px;
+		}
+		
+		#divFrame {
+			border:solid 1px #666;
+			width:901px;
+			overflow:hidden
+		}
+		
+		#divFrame .clsHead {
+			background-color:#eee;
+			padding:8px;
+			height:18px;
+			cursor:hand
+		}
+		
+		#divFrame .clsHead h3 {
+			padding:0px;
+			margin:0px;
+			float:left
+		}
+		
+		#divFrame .clsHead span {
+			float:right;
+			margin-top:3px
+		}
+		
+		#divFrame .clsContent {
+			padding:8px
+		}
+		
+		#divFrame .clsContent ul {
+			list-style-type:none;
+			margin:0px;
+			padding:0px
+		}
+		
+		#divFrame .clsContent ul li {
+			float:left;
+			width:95px;
+			height: 23px;
+			line-height:23px
+		}
+		
+		#divFrame .clsBot {
+			float:right;
+			padding-top:5px;
+			padding-bottom:5px
+		}
+		
+		.GetFocus {
+			background-color:#eee
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$(".clsHead").click(function(){
+				if($(".clsContent").is(":visible")) {
+					$(".clsHead span img")
+					.attr("src","Images/a1.jpg");
+
+					$(".clsContent").css("display","block");
+				}
+			});
+
+			$(".clsBot > a").click(function(){
+				// first generation
+				if($(".clsBot > a").text() == " Simplified ") {
+					$("ul li:gt(4):not(:last)").hide();
+					$(".clsBot > a").text(" More ");
+				} else {
+					$("ul li:gt(4):not(:last)").show()	// greater than 4
+					.addClass("GetFocus");
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="divFrame">
+		<div class="clsHead">
+			<h3>Diseases</h3>
+			<span><img src = "Images/a2.jpg" alt="" /></span>
+		</div>
+		<div class="clsContent">
+			<ul>
+				<li><a href="#">Forensic</a><i>(1110)</i></li>
+				<li><a href="#">Medical</a><i>(230)</i></li>
+				<li><a href="#">Veterinary</a><i>(1430)</i></li>
+				<li><a href="#">Cancer</a><i>(1560)</i></li>
+				<li><a href="#">Lung Cancer</a><i>(870)</i></li>
+				<li><a href="#">Tuberculosis</a><i>(1460)</i></li>
+				<li><a href="#">Psoriasis</a><i>(1450)</i></li>
+				<li><a href="#">Pneumonia</a><i>(1780)</i></li>
+				<li><a href="#">Rheumatiod Arthritis</a><i>(930)</i></li>
+				<li><a href="#">Skin</a><i>(3450)</i></li>
+				<li><a href="#">Heart</a><i>(980)</i></li>
+				<li><a href="#">Lung</a><i>(3230)</i></li>
+			</ul>
+			<div class="clsBot"><a href="#">Simplified</a>
+				<img src="Images/a5.jpg" alt=""/>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
