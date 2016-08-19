@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page 63  -->
+	<meta charset="UTF-8">
+	<title>JQuery File</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style>
+		body {
+			font-size:12px
+		}
+		
+		div {
+			float:left;
+			padding-left:10px
+		}
+		
+		img {
+			border:solid 1px #ccc;
+			padding:3px;
+			float:left
+		}
+	</style>
+	<script>
+		$(function(){
+			var strAlt = $("img").attr("src");	// attribute 1
+			strAlt += "<br /><br />" +
+			$("img").attr("title");		// attribute 2
+			$("#divAlt").html(strAlt);	// in page
+		})
+	</script>
+</head>
+<body>
+	<img alt="" title="This is a lolita"
+		 src = "Images/Lolita.jpg"/>
+	<div id="divAlt"></div>
+</body>
+</html>
