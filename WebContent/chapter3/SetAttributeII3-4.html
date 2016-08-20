@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page 61  -->
+	<meta charset="UTF-8">
+	<title>JQuery Set Attribute II</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style type="text/css">
+		body {
+			font-size:12px
+		}
+		
+		.clsSpn {
+			float:left;
+			padding-top:10px;
+			padding-left:10px
+		}
+		
+		.clsImg {
+			border:solid 1px #ccc;
+			padding:3px;
+			float:left
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$("img").attr("src",function(){
+				return "Images/Lolita"+
+					Math.floor(Math.random()*2+1)+
+				".jpg"});
+			$("img").attr("title","This is a lolita");
+			$("img").addClass("clsImg");
+		})
+	</script>
+</head>
+<body>
+	<img alt="" src="Images/Lolita1.jpg" style="float:left" />
+</body>
+</html>
