@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page 61  -->
+	<meta charset="UTF-8">
+	<title>JQuery Set Attribute II</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style type="text/css">
+		body {
+			font-size:15px;
+			text-align:center
+		}
+		
+		div {
+			border:5px;
+			width:220px;
+			margin:5px
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			var strHTML = $("#divShow").html();	// get HTML
+			var strText = $("#divShow").text();	// get text
+			$("#divHTML").html(strHTML);		// Set HTML content
+			$("#divText").text(strText);
+		})
+	</script>
+</head>
+<body>
+	<div id="divShow"><b><i>Write Less Do More</i></b></div>
+	<div id="divHTML"></div>
+	<div id="divText"></div>
+</body>
+</html>
