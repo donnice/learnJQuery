@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page 61  -->
+	<meta charset="UTF-8">
+	<title>JQuery Set Attribute</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style type="text/css">
+		body {
+			font-size:12px
+		}
+		
+		.clsSpn {
+			float:left;
+			padding-top:10px;
+			padding-left:10px
+		}
+		
+		.clsImg {
+			border:solid 1px #ccc;
+			padding:3px;
+			float:left
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$("img").attr("src","Images/Lolita.jpg");	// set src att
+			$("img").attr("title","This is a beauty");	// set title
+			$("img").attr({src:"Images/Lolita2.jpg",
+				title:"This is another Lolita"});
+			$("img").addClass("clsImg");
+			$("span").html("Loading done");
+		})
+	</script>
+</head>
+<body>
+	<img alt="" src="Images/Lolita3.jpg" style="float:left" />
+	<span class="clsSpn">Loading...</span>
+</body>
+</html>
