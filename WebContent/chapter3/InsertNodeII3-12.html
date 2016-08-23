@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page 81  -->
+	<meta charset="UTF-8">
+	<title>JQuery Dynamic Insertion II</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style type="text/css">
+		body {
+			font-size:13px
+		}
+		
+		img {
+			border:solid 1px #ccc;
+			padding:3px;
+			margin: 5px
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$("img").appendTo($("span"));
+		})
+	</script>
+</head>
+<body>
+	<img title="Lolita!" src="Images/Lolita1.jpg" />
+	<span><img title="Another one!" src="Images/Lolita2.jpg"/></span>
+</body>
+</html>
