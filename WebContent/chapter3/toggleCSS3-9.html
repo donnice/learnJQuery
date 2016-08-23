@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page 75  -->
+	<meta charset="UTF-8">
+	<title>JQuery Toggle CSS</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style type="text/css">
+		.clsImg {
+			border:solid 1px #666;
+			padding:3px
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$("img").click(function(){
+				$(this).toggleClass("clsImg");	// change title
+			})
+		})
+	</script>
+</head>
+<body>
+	<img src="Images/url.png" alt="" title="amazon" />
+</body>
+</html>
