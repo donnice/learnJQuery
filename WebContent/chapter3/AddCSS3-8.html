@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page 68  -->
+	<meta charset="UTF-8">
+	<title>JQuery Val</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style type="text/css">
+		body {
+			font-size:15px
+		}
+		
+		P {
+			padding:5px;
+			width:220px
+		}
+		
+		.cls1 {
+			font-weight:bold;
+			font-style:italic
+		}
+		
+		.cls2 {
+			border:solid 1px #666;
+			background-color:#eee
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$("p").click(function(){
+				$(this).addClass("cls1 cls2");
+			})
+		})
+	</script>
+</head>
+<body>
+	<p>Write Less Do More</p>
+</body>
+</html>
