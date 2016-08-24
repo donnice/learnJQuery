@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page 83  -->
+	<meta charset="UTF-8">
+	<title>JQuery Copy Node Function</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style type="text/css">
+		img {
+			border:solid 1px #ccc;
+			padding:3px;
+			margin:5px
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$("img").click(function(){
+				$(this).clone(true).appendTo("span");
+			})
+		})
+	</script>
+</head>
+<body>
+	<span><img title="Cover" src="Images/Lolita1.jpg" /></span>
+</body>
+</html>
