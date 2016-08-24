@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page 83  -->
+	<meta charset="UTF-8">
+	<title>JQuery Dynamic Node Function</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style type="text/css">
+		body {
+			font-size:13px
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$("span").after(retHtml);
+			function retHtml() {
+				var str = "<span><b>Write Less Do More</b></span>";
+				return str;
+			}
+		})
+	</script>
+</head>
+<body>
+	<span>jQuery</span>
+</body>
+</html>
