@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page 83  -->
+	<meta charset="UTF-8">
+	<title>JQuery Traverse</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style type="text/css">
+		body {
+			font-size:13px
+		}
+		
+		img {
+			border:solid 1px #ccc;
+			padding:3px;
+			margin:5px;
+			width:143px;
+			height:101px;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$("img").each(function(index){
+				this.title = "The "+index+" pic, alt is "+this.alt;
+			})
+		})
+	</script>
+</head>
+<body>
+	<p>
+		<img src="Images/washington.jpg" alt="uw" />
+		<img src="Images/ucla.jpg" alt="ucla" />
+		<img src="Images/columbia.png" alt="columbia" />
+	</p>
+</body>
+</html>
