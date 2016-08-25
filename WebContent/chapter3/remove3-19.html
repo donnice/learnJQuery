@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page 92  -->
+	<meta charset="UTF-8">
+	<title>JQuery Remove</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style type="text/css">
+		body {
+			font-size:13px
+		}
+		
+		ul {
+			width:200px;
+		}
+		
+		ul li {
+			list-style:none;
+			padding:0px;
+			height:23px;
+		}
+		
+		span {
+			padding-left:20px
+		}
+		
+		.btn {
+			border:#666 1px solid;
+			padding:2px;
+			width:60px;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$("ul li:first").css("font-weight","bold");	// first line
+			$("#Button1").click(function(){
+				$("ul li").remove("li[title=t]"); // remove assigned ele
+				$("ul li:eq(1)").remove();	// remove 3rd ele
+			})
+		})
+	</script>
+</head>
+<body>
+	<ul>
+		<li>Id</li>
+		<li title="t">1001</li>
+		<li>1002</li>
+		<li>1003</li>
+		<li style="text-align:center;padding-top:5px">
+			<input id="Button1" type="button"
+				   value="Delete" class="btn"/>
+		</li>
+	</ul>
+</body>
+</html>
