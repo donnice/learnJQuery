@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page 83  -->
+	<meta charset="UTF-8">
+	<title>JQuery Substitute Content</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style type="text/css">
+		body {
+			font-size:13px
+		}
+		
+		p {
+			background-color:#eee;
+			padding:5px;
+			width:200px
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$("p").wrap("<b><b/>");		// bold
+			$("span").wrapInner("<i></i>");	// italian
+		})
+	</script>
+</head>
+<body>
+	<p>Favorite Sports:<span>Badminton</span></p>
+	<p>Favorite books:<span>Computer Science, Material Science</span></p>
+</body>
+</html>
