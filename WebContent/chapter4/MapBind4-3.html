@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page 102  -->
+	<meta charset="UTF-8">
+	<title>JQuery Map Bind</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style type="text/css">
+		body {
+			font-size:13px
+		}
+		
+		.clsTip {
+			border:#ccc1px solid;
+			background-color:#eee;
+			margin-top:15px;
+			padding:5px;
+			width:185px;
+			display:none
+		}
+		
+		.txt {
+			border:#666 1px solid;
+			padding:3px
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$(".txt").bind({focus:function(){
+				$("#divTip")
+				.show()			// show
+				.html("Playing focus");
+				},
+	
+				change:function(){
+					$("#divTip")
+					.show()		// show
+					.html("Playing change");
+				}
+			})
+		})
+	</script>
+</head>
+<body>
+	<div>Name: <input type="text" class="txt" /></div>
+	<div id="divTip" class="clsTip"></div>
+</body>
+</html>
