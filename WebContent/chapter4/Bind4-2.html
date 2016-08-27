@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page 102  -->
+	<meta charset="UTF-8">
+	<title>JQuery Bind</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style type="text/css">
+		.btn {
+			border:#666 1px solid;
+			padding:2px;
+			width:50px
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$("#btnBind").bind("click",function(){
+				$(this).attr("disabled","disabled")	// btn disabled
+			})
+		})
+	</script>
+</head>
+<body>
+	<input id="btnBind" type = "button" value="Button"
+		   class="btn" />
+</body>
+</html>
