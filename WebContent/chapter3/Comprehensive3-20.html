@@ -71,8 +71,9 @@
 			})
 
 			$("#btnDel").click(function(){
-				var intL = $("table tr td input:checked not('#chkAll')").length; // get their length
-				if(intL != 0) {
+				var intL = $("table tr td input:checked :not('#chkAll')").length; // get their length
+				console.log(intL);
+				if(intL == 0) {
 					$("table tr td input[type=checkbox]:not('#chkAll')")
 					.each(function(index) {
 						if(this.checked) {
@@ -89,15 +90,62 @@
 				$("#imgTip").attr("src",this.src)
 				.css({"top":(e.pageY+y)+"px",
 				"left":(e.pageX+x)+"px"})
-				.show(3000);
+				.show();
 			})
 
-			
-			
+			$("table tr td img").mouseout(function(){
+				$("#imgTip").hide();	// hide img
+			})
+		
 		})
 	</script>
 </head>
 <body>
-
+	<table>
+		<tr>
+			<th>Select</th>
+			<th>Num</th>
+			<th>Photo</th>
+			<th>Student</th>
+			<th>Nickname</th>
+			<th>Year</th>
+		</tr>
+		<tr id="0">
+			<td><input id="Checkbox1" type="checkbox" value="0"/></td>
+			<td>1001</td>
+			<td><img src="Images/washington.jpg" alt=""/></td>
+			<td>Shujie CHEN</td>
+			<td>uwashington</td>
+			<td>2019</td>
+		</tr>
+		<tr id="1">
+			<td><input id="Checkbox2" type="checkbox" value="1"/></td>
+			<td>1002</td>
+			<td><img src="Images/ucla.jpg" alt=""/></td>
+			<td>Shujie CHEN</td>
+			<td>ucla</td>
+			<td>2030</td>
+		</tr>
+		<tr id="2">
+			<td><input id="Checkbox3" type="checkbox" value="2"/></td>
+			<td>1003</td>
+			<td><img src="Images/columbia.png" alt=""/></td>
+			<td>Shujie CHEN</td>
+			<td>columbia</td>
+			<td>2032</td>
+		</tr>
+	</table>
+	<table>
+		<tr>
+			<td style="text-align:left;height:28px">
+				<span><input id="chkAll"
+							 type="checkbox"/>Select All</span>
+				<span><input id="btnDel"
+							 type="button" value="delete"
+							 class="btn" /></span>
+			</td>
+		</tr>
+	</table>
+	<img id="imgTip" class="clsImg" src="Images/url.png" />
 </body>
 </html>
