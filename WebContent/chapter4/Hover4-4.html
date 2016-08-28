@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page 102  -->
+	<meta charset="UTF-8">
+	<title>JQuery Hover</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style type="text/css">
+		body {
+			font-size:13px
+		}
+		
+		.clsFrame {
+			border:solid 1px #666;
+			width:220px
+		}
+		
+		.clsFrame .clsTitle {
+			background-color:#eee;
+			padding:5px;
+			font-weight:bold
+		}
+		
+		.clsFrame .clsContent {
+			padding:5px;
+			display:none
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$(".clsTitle").hover(function(){
+				$(".clsContent").show();
+			}, function(){
+				$(".clsContent").hide();
+			})
+		})
+	</script>
+</head>
+<body>
+	<div class="clsFrame">
+		<div class="clsTitle">Environmental Pathology</div>
+		<div class="clsContent">
+			&nbsp;&nbsp;Environmental Pathology is a cross field between Environmental Science and Medicine.
+			It's different from Public Health because it cares more about the biological and medical principle over such
+			diseases rather than a macro aspect of management.																																										
+		</div>
+	</div>
+</body>
+</html>
