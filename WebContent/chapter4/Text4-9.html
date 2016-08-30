@@ -72,11 +72,48 @@
 				.html("Please input your email!");
 			})
 
-			
+			$("#txtEmail").blur(function(){
+				var vtxt = $("#txtEmail").val();
+				if(vtxt.length == 0) {
+					$(this).removeClass("txtInit")
+					.addClass("txtBlur");
+					$("#email").removeClass("divFocu")
+					.addClass("divBlur");
+					$("#spnTip").addClass("spnBlur")
+					.html("Email address cannot be null!");
+				} else {
+					if(!chkEmail(vtxt)) {	// check whether valid
+						$(this).removeClass("txtInit")
+						.addClass("txtBlur");
+						$("#email").removeClass("divFocu")
+						.addClass("divBlur");
+						$("#spnTip").addClass("spnBlur")
+						.html("Email's format is not correct!");
+					}
+
+					else {
+						$(this).removeClass("txtBlur")
+						.addClass("txtInit");
+						$("#email").removeClass("divFocu");
+						$("#spnTip").removeClass("spnBlur")
+						.addClass("spnSucc").html("");
+					}
+				}
+			})
+
+			function chkEmail(strEmail) {
+				var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i
+				return pattern.text(strEmail);
+			}
 		})
 	</script>
 </head>
 <body>
-
+	<form id="form1" action="#">
+		<div id="email" class="divInit">Email:
+			<span id="spnTip" class="spnInit"></span>
+			<input id="txtEmail" type="text" class="txtInit" />
+		</div>
+	</form>
 </body>
 </html>
