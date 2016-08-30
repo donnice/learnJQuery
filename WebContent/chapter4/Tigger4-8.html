@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page 116  -->
+	<meta charset="UTF-8">
+	<title>JQuery Trigger</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style type="text/css">
+		body {
+			font-size:13px
+		}
+		
+		.txt {
+			border:#666 1px solid;
+			padding:3px
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			var oTxt = $("input");	// get input
+			oTxt.trigger("select");	// automatically get text frame
+			oTxt.bind("btn_Click",function(){
+				var txt = $(this).val();	// get content by self
+				$("#divTip").html(txt);		// left in page
+				alert("Who the hell are you?");
+			})
+			oTxt.trigger("btn_Click");
+		})
+	</script>
+</head>
+<body>
+	Name:<input id = "Text1" type="text" class="txt"
+				value="Shujie" />
+		 <div id="divTip" style="padding-top: 5px"></div>
+</body>
+</html>
