@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page 113  -->
+	<meta charset="UTF-8">
+	<title>JQuery One:function run only once</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style type="text/css">
+		.btn {
+			border:#666 1px solid;
+			padding:2px;
+			width: 160px;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			function btn_Click(){
+				this.value="010-1234567";
+				alert("Shit!");
+			}
+			$("input").one("click",btn_Click);
+		})
+	</script>
+</head>
+<body>
+	<input id="Button1" type = "button"
+		   value="See Telephone" class="btn" />
+</body>
+</html>
