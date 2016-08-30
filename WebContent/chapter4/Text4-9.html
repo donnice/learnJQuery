@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page 118  -->
+	<meta charset="UTF-8">
+	<title>JQuery Text</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style type="text/css">
+		body {
+			font-size:13px
+		}
+		
+		.divInit {
+			width:390px;
+			height:55px;
+			line-height:55px;
+			padding-left:20px
+		}
+		
+		.txtInit {
+			border:#666 1px solid;
+			padding:3px;
+			background-image:url('Images/washington.jpg')
+		}
+		
+		.spnInit{
+			width:179px;
+			height:40px;
+			line-height:40px;
+			float:right;
+			margin-top:8px;
+			padding-left:10px;
+			background-repeat:no-repeat
+		}
+		
+		/* new ele after Blur*/
+		.divBlur {
+			background-color:#FEEEC2
+		}
+		
+		.txtBlur {
+			border:#666 1px solid;
+			padding:3px;
+			background-image:url('Images/ucla.jpg')
+		}
+		
+		.spnBlur {
+			background-image:url('Images/url.png')
+		}
+		
+		/* focus */
+		.divFocu {
+			background-color:#EDFFE5
+		}
+		
+		.spnSucc {
+			background-image:url('Images/columbia.png');
+			margin-top:20px
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$("#txtEmail").trigger("focus");	// default focus
+
+			$("#txtEmail").focus(function(){	// txt get focus
+				$(this).removeClass("txtBlur")
+				.addClass("txtInit");
+				$("#email").removeClass("divBlur")
+				.addClass("divFocu");
+				$("#spnTip").removeClass("spnBlur")
+				.removeClass("spnSucc")
+				.html("Please input your email!");
+			})
+
+			
+		})
+	</script>
+</head>
+<body>
+
+</body>
+</html>
