@@ -39,20 +39,65 @@
 			}
 
 			var arrData = {
-				UWashington:{ Degree1_1:"Master of Science",
-							  Major1_2:"Computational Finance"},
-				UCLA:       { Degree2_1:"Master of Engineering",
-							  Major2_2:"Electrical Engineering"},
-				Columbia:	{ Degree3_1:"Master of Science",
+				UWashington:{ Degree1_1:"Master of Science, Master of Eng",
+							  Major1_2:"Computational Finance, Risk Management"},
+				UCLA:{ Degree2_1:"Master of Engineering, Master of Sci",
+							  Major2_2:"Electrical Engineering, Intergrated Circuit"},
+				Columbia:{ Degree3_1:"Master of Science",
 							  Major3_2:"Applied Mathematics"}
 			};
-			$.each(arrData,function(pF) {
+			$.each(arrData,function(pF) { // traverse data add school
 				$("#selF").append("<option>"+pF+"</option>");
-			})
+			});
+			$("#selF").change(function(){ // change the event
+				objInit("#selT");
+				objInit("#selC");
+				$.each(arrData,function(pF,pS){
+					if($("#selF option:selected")
+							.text() == pF) {
+						$.each(pS,function(pT,pC){
+							$("#selT").append("<option>"+pC+"</option>");
+						});
+						// school list change event
+						$("#selT").change(function(){
+							objInit("#selC");
+							$.each(pS,function(pT,pC){
+								// if the chosen match the data
+								if($("#selT option:selected")
+									.text() == pT) {
+									$.each(pC.split(","),function(){
+										$("#selC").append("<option>"
+											+this+"</option>");
+									});
+								}
+							});
+						});
+					}
+				});
+			});
+
+			$("#Button1").click(function(){
+				var strValue = "Your next University:";
+				strValue += $("#selF option:selected").text();
+				strValue += "&nbsp; Your chosen degree:";
+				strValue += $("#selT option:selected").text();
+				strValue += "&nbsp; Your chosen major:";
+				strValue += $("#selC option:selected").text();
+				$("#divTip")
+				.show()
+				.addClass("clsTip")
+				.html(strValue);
+			});
 		})
 	</script>
 </head>
 <body>
-
+	<div class="clsInit">
+		University:<select id="selF"><option>Please choose:</option></select>
+		Degree:<select id="selT"><option>Please choose:</option></select>
+		Major:<select id="selC"><option>Please choose:</option></select>
+		<input id="Button1" type="button" value="Search" class="btn" />
+	</div>
+	<div class="clsInit" id="divTip"></div>
 </body>
 </html>
