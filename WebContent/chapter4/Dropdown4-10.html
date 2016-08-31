@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page 102  -->
+	<meta charset="UTF-8">
+	<title>JQuery Dropdown</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style type="text/css">
+		body {
+			font-size:13px
+		}
+		
+		.clsInit {
+			width:435px;
+			height:35px;
+			line-height:35px;
+			padding-left:10px
+		}
+		
+		.clsTip {
+			padding-top:5px;
+			background-color:#eee;
+			display:none
+		}
+		
+		.btn {
+			border:#666 1px solid;
+			padding:2px;
+			width:65px;
+			float:right;
+			margin-top:6px;
+			margin-right:6px
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			function objInit(obj) {
+				return $(obj).html("<option>Please select</option>");
+			}
+
+			var arrData = {
+				UWashington:{ Degree1_1:"Master of Science",
+							  Major1_2:"Computational Finance"},
+				UCLA:       { Degree2_1:"Master of Engineering",
+							  Major2_2:"Electrical Engineering"},
+				Columbia:	{ Degree3_1:"Master of Science",
+							  Major3_2:"Applied Mathematics"}
+			};
+			$.each(arrData,function(pF) {
+				$("#selF").append("<option>"+pF+"</option>");
+			})
+		})
+	</script>
+</head>
+<body>
+
+</body>
+</html>
