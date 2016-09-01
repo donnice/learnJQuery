@@ -79,6 +79,56 @@
 		}
 	</style>
 	
+	<script type="text/javascript">
+		$(function(){
+			var curY, curH, curW;
+			var srtY, srtX, objL;
+
+			function setInitValue(obj) {
+				curY = obj.offset().top;
+				curH = obj.height();
+				curW = obj.width();
+				srtY = curY +(curH/2)+"px";	// arrow's top
+				srtX = curW-5+"px";			// arrow's left
+			}
+
+			$(".optn").mouseover(function(){
+				objL = $(this);				// current obj
+				setInitValue(objL);			// current pos
+				var allY = curY - curH +"px"; // frame's top value
+				objL.addClass("optnFocus");	// get focus
+				objL.next("ul").show();
+				// get and set frame's coordinate
+				.css({"top":allY, "left":curW})
+				$("#sort").show()
+				// get and set arrow's coordinate
+				.css({"top":srtY,"left":srtX})
+			})
+			.mouseout(function(){	// set mouseout for all
+				// delete focus
+				$(this).removeClass("optnFocus");
+				$(this).next("ul").hide();	// hide frame
+				$("#sort").hide();			// hide arrow
+			})
+
+			$(".tip").mousemove(function(){
+				$(this).show();
+				objL = $(this).prev("li");	// get previous object
+				setInitValue(objL);			// get current position
+				// get new class for previous li
+				objL.addClass("optnFocus");
+				// set and show arrow's coordinate
+				$("#sort").show().css({"top":srtY,"left":srtX});
+			})
+
+			.mouseout(function(){
+				$(this).hide();				// hide frame
+				// delete focus
+				$(this).prev("li").removeClas("optnFocus");
+				$("#sort").hide();			// hide arrow
+			})
+		})
+	</script>
 </head>
 <body>
 
