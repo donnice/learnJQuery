@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- page 102  -->
+	<!-- page 129  -->
 	<meta charset="UTF-8">
 	<title>JQuery Navigation</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
@@ -97,7 +97,7 @@
 				setInitValue(objL);			// current pos
 				var allY = curY - curH +"px"; // frame's top value
 				objL.addClass("optnFocus");	// get focus
-				objL.next("ul").show();
+				objL.next("ul").show()
 				// get and set frame's coordinate
 				.css({"top":allY, "left":curW})
 				$("#sort").show()
@@ -124,13 +124,51 @@
 			.mouseout(function(){
 				$(this).hide();				// hide frame
 				// delete focus
-				$(this).prev("li").removeClas("optnFocus");
+				$(this).prev("li").removeClass("optnFocus");
 				$("#sort").hide();			// hide arrow
 			})
 		})
 	</script>
 </head>
 <body>
-
+	<ul>
+		<li class="menu">
+			<div>
+				<img alt="" src="Images/ucla.jpg" />
+				<span>Universities</span>
+			</div>
+			<ul class="content">
+				<li class="optn"><a href="#">UWashington</a></li>
+				<ul class="tip">
+					<li><a href="#">Computational Finance</a></li>
+					<li><a href="#">Applied Mathematics</a></li>
+					<li><a href="#">Information Management</a></li>
+					<li><a href="#">Mechanical Engineering</a></li>
+				</ul>
+				<li class="optn"><a href="#">UCLA</a></li>
+				<ul class="tip">
+					<li><a href="#">Intergral Circuit</a></li>
+					<li><a href="#">Electrical Engineering</a></li>
+					<li><a href="#">Computer Science</a></li>
+					<li><a href="#">Chemical Engineering</a></li>
+				</ul>
+				<li class="optn"><a href="#">Columbia</a></li>
+				<ul class="tip">
+					<li><a href="#">Applied Mathematics</a></li>
+					<li><a href="#">Statistics</a></li>
+					<li><a href="#">Material Science</a></li>
+					<li><a href="#">Environmental Engineering</a></li>
+				</ul>
+				<li class="optn"><a href="#">Stanford</a></li>
+				<ul class="tip">
+					<li><a href="#">Material Science</a></li>
+					<li><a href="#">Computational Science</a></li>
+					<li><a href="#">Environmental Engineering</a></li>
+					<li><a href="#">Business Administration</a></li>
+				</ul>
+			</ul>
+			<!-- <img id="sort" src="Images/url.png" alt="" /> -->
+		</li>
+	</ul>
 </body>
 </html>
