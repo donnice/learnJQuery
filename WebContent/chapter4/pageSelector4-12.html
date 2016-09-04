@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page 132  -->
+	<meta charset="UTF-8">
+	<title>JQuery Page Selector</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style type="text/css">
+		body {
+			font-size:13px;
+		}
+		
+		ul, li {
+			margin:0;
+			padding:0;
+			list-style:none
+		}
+		
+		#menu li {
+			text-align:center;
+			float:left;
+			padding:5px;
+			margin-right:2px;
+			width:50px;
+			cursor:pointer
+		}
+		
+		#menu li.tabFocus {
+			width:50px;
+			font-weight:bold;
+			background-color:#f3f2e7;
+			border:solid 1px #666;
+			border-bottom:0;
+			z-index:100;
+			position:relateve
+		}
+		
+		#content {
+			width:260px;
+			height:80px;
+			padding:10px;
+			background-color:#f3f2e7;
+			clear:left;
+			border:solid 1px #666;
+			position:relative;
+			top:-1px
+		}
+		
+		#content li{
+			display:none
+		}
+		
+		#content li.conFocus {
+			display:block
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$("#menu li").each(function(index){
+				$(this).click(function(){
+					// remove selected type
+					$("#menu li.tabFocus").removeClass("tabFocus");
+					$(this).addClass("tabFocus");	// add current CSS
+					// show visible content
+					$("#content li:eq("+index+")").show()
+					.siblings().hide();
+				});
+			});
+		})
+	</script>
+</head>
+<body>
+	<ul id = "menu">
+		<li class="tabFocus">Majors</li>
+		<li>Computational Finance</li>
+		<li>Electrical Engineering</li>
+		<li>Applied Mathematics</li>
+	</ul>
+	<ul id="content">
+		<li class="conFocus">I am in majors</li>
+		<li>Welcome to the knowledge world!</li>
+		<li>Stay hungry, stay foolish</li>
+		<li>It's really hard...</li>
+	</ul>
+</body>
+</html>
