@@ -66,15 +66,26 @@
 		.mask {
 			width:100%;
 			height:100%;
-			background-color:#000;
+			background-color:#000''
 			position:absolute;
 			top:0px;
 			left:0px;
+			filter:alpha(opacity=30);
+			display:none;
+			z-index:100
+		}
+		
+		.btn {
+			border:#666 1px solid;
+			padding:2px;
+			width:65px;
 		}
 	</style>
 	
 	<script type="text/javascript">
 		$(function(){
+			window.alert("SHIT");
+			
 			$("#Button1").click(function(){
 				$(".mask").show();
 				showDialog();
@@ -84,11 +95,71 @@
 			function showDialog() {
 				var objW = $(window);		// current window
 				var objC = $(".dialog");	// dialog frame
+				var brsW = objW.width();
+				var brsH = objW.height();
+				var sclL = objW.scrollLeft();
+				var sclT = objW.scrollTop();
+				var curW = objC.width();
+				var curH = objC.height();
+				// calculate left
+				var left = sclL + (brsW-curW)/2;
+				// calculate top
+				var top = sclT + (brsH - curH)/2;
+				// set the position of object
+				objC.css({"left":left,"top":top});
 			}
+
+			$(window).resize(function(){
+				if(!$(".dialog").is(":visible")) {
+					return;
+				}
+				showDialog();	// set top and left
+			});
+
+			$(".title img").click(function(){
+				$(".dialog").hide();
+				$(".mask").hide();
+			})
+
+			$("#Button3").click(function(){   // close img 
+				$(".dialog").hide();
+				$(".mask").hide();
+			})
+
+			$("#Button2").click(function(){	// confirm
+				$(".dialog").hide();
+				$(".mask").hide();
+				if($("input:checked").length != 0) { // delete chosen
+					$(".divShow").remove();	// delete some line of data
+				}
+			})
 		})
 	</script>
 </head>
 <body>
-
+	<div class="divShow">
+		<input id="Checkbox1" type="checkbox" />
+		<a href="#">This is removable</a>
+		<span>
+			<input id="Button1" type="button"
+				   value="delete" class="btn" />
+		</span>
+	</div>
+	<div class="mask"></div>
+	<div class="dialog">
+		<div class="title">
+			<img src="Images/ucla.jpg" alt="Click to close"/>Notification
+		</div>
+		<div class="content">
+			<img src="../chapter3/Images/url.png" alt=""/>
+			<span>Do you really wanna delete it?</span>
+		</div>
+		<div class="bottom">
+			<input id="Button2" type="button"
+				   value="Confirm" class="btn">&nbsp;&nbsp;
+			<input id="Button3" type="button"
+				   value="Cancel" class="btn" />
+		</div>
+	</div>
 </body>
 </html>
