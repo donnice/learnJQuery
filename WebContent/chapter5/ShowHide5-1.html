@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page 144  -->
+	<meta charset="UTF-8">
+	<title>JQuery Show and Hide</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style type="text/css">
+		body {
+			font-size:13px
+		}
+		
+		.artFram {
+			border:solid 1px #ccc;
+			background-color:#eee;
+			width:260px;
+			padding:8px;
+			word-break:break-all
+		}
+		
+		.artList {
+			line-height:1.8em
+		}
+	</style>
+	
+	<script type="text/javascript">
+		$(function(){
+			var $link = $(".artList a");	// get click
+			var $hide = $(".artList :eq(2)");	// hidden one
+			$link.click(function(){
+				if($(this).html() == "Show up") {
+					$(this).html("Hide down");
+					$hide.show();			// show hidden
+				} else {
+					$(this).html("Show up");
+					$hide.hide();
+				}
+			})
+		})
+	</script>
+</head>
+<body>
+	<div class="artFram">
+		<div class="artList">
+			<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+			<span>A good programmer should be</span>
+			<span style="display:none">Smart</span>
+			&nbsp;<a href="javascript:void(0)">Show up</a>
+		</div>
+	</div>
+</body>
+</html>
