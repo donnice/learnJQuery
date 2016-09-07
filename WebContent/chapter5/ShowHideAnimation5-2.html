@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page 146  -->
+	<meta charset="UTF-8">
+	<title>JQuery Show and Hide Animation</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style type="text/css">
+		body {
+			font-size:13px
+		}
+		
+		img {
+			display:none;
+			cursor:pointer
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$("a").click(function(){
+				$("img").show(3000,function(){
+					$(this).css("border","solid 1px #ccc");
+				})
+			})
+
+			$("img").click(function(){
+				$(this).hide(3000);
+			})
+		})
+	</script>
+</head>
+<body>
+	<a href="javascript:void(0)">Show UP</a>
+	<img src="Images/amazon.jpg" />
+</body>
+</html>
