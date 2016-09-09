@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page 152  -->
+	<meta charset="UTF-8">
+	<title>JQuery Slideoggle</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style type="text/css">
+		.divFrame {
+			border:solid 1px #666;
+			background-color:#eee;
+			padding:5px;
+			width:149px
+		}
+		
+		.divFrame img{
+			border:solid 1px #eee;
+			padding:2px
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$(".divFrame").click(function(){
+				$("img").slideToggle(3000,function(){
+					$("img").css("border","solid 1px #ccc");
+				})
+			})
+		})
+		
+	</script>
+</head>
+<body>
+	<div class="divFrame">
+		<img src="Images/microsoft.png" alt="" title="Microsoft" />
+	</div>
+</body>
+</html>
