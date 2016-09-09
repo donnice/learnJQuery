@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page 146  -->
+	<meta charset="UTF-8">
+	<title>JQuery Toggle</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style type="text/css">
+		body {
+			font-size:13px
+		}
+		
+		.divFrame {
+			width:180px
+		}
+		
+		.divFrame .divMenu {
+			float:left
+		}
+		
+		.divFrame .divContent {
+			float:right
+		}
+		
+		.divFrame .divContent img {
+			display:none
+		}
+		
+		.btn {
+			border:#666 1px solid;
+			padding:2px;
+			width:80px;
+			margin-bottom:5px;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$("input:eq(0)").click(function(){
+				$("img").toggle();
+			})
+			
+			$("input:eq(1)").click(function(){
+				var intI = 0;
+				var blnA = intI > 1;
+				$("img").toggle(blnA);
+			})
+
+			$("input:eq(2)").click(function(){
+				$("img").toggle(3000,function(){
+					$(this)
+					.css({"border":"solid 1px #ccc",
+						  "padding":"2px"})
+				});
+			})
+		})
+	</script>
+</head>
+<body>
+	<div class="divFrame">
+		<div class="divMenu">
+			<input id="Button1" type="button"
+			value="No parameter" class="btn" /><br />
+			<input id="Button2" type="button"
+			value="Show logic" class="btn" /><br />
+			<input id="Button3" type="button"
+			value="Show animation" class="btn" />
+		</div>
+		<div class="divContent">
+			<img src="Images/amazon.jpg" alt="" />
+		</div>
+	</div>
+</body>
+</html>
