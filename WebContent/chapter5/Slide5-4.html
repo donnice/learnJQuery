@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page 146  -->
+	<meta charset="UTF-8">
+	<title>JQuery Slide</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style type="text/css">
+		body {
+			font-size:13px
+		}
+		
+		.divFrame {
+			width:126px;
+			border:solid 1px #666
+		}
+		
+		.divFrame .divTitle {
+			padding:5px;
+			background-color:#eee
+		}
+		
+		.divFrame .divContent {
+			padding:8px;
+		}
+		
+		.divFrame .divContent img {
+			border:solid 1px #ccc;
+			padding:2px
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			var blnShow = false;
+			var $Title = $(".divTitle");	// get title
+			var $Tip = $("#divTip");
+
+			$Title.click(function(){
+				if(!blnShow) {
+					// img go up
+					$("img").slideUp(3000,function(){
+						$Tip.html("Close!");
+					})
+					$(this).html("Show image");
+					// change title
+					blnShow = true;
+				}
+				else {
+					$Tip.html("");
+					$("img").slideDown(3000);
+					$(this).html("Hide image");
+					blnShow = false;
+				}
+			})
+		})
+	</script>
+</head>
+<body>
+	<div class="divFrame">
+		<div class="divTitle">Hide Image</div>
+		<div class="divContent">
+			<img src="Images/google.png" alt="" />
+			<div id="divTip"></div>
+		</div>
+	</div>
+</body>
+</html>
